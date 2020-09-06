@@ -47,7 +47,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'online_class.urls'
+ROOT_URLCONF = 'cgs.urls'
 
 TEMPLATES = [
     {
@@ -67,7 +67,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'online_class.wsgi.application'
+WSGI_APPLICATION = 'cgs.wsgi.application'
 
 
 # Database
@@ -122,7 +122,7 @@ AUTH_USER_MODEL = 'assignment.User'
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "online_class/static"),
+    os.path.join(BASE_DIR, "cgs/static"),
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
