@@ -15,7 +15,7 @@ class Teacher(models.Model):
 class Class(models.Model):
     class_name = models.CharField(verbose_name="Name of Subject", max_length = 100)
     teacher_name = models.ForeignKey(Teacher, verbose_name= "Name of Teacher", on_delete=models.CASCADE)
-    sem = models.PositiveIntegerField(verbose_name="Semister")
+    sem = models.PositiveIntegerField(verbose_name="Semester")
     course_time = models.PositiveIntegerField(verbose_name="Total study Hour")
 
     def __str__(self):
