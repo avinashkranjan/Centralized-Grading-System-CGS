@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Assignments - Update
+{% endblock title %}
+
+{% block body %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Update">
+        <a href="{% url 'teachers:assignment_page' %}" class="btn btn-outline-secondary" role="button">Nevermind</a>
+        <a href="{% url 'teachers:assignment_delete' assignment.pk %}" class="btn btn-danger float-right" role="button">Delete</a>
+    </form>
+{% endblock body %}

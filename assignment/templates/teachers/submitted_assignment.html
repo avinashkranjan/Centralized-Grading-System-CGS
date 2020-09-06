@@ -1,0 +1,65 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+Assignments - Submitted
+{% endblock title %}
+
+{% block body %}
+
+<div class="container py-4">
+    <div>
+        <h2>
+            Assignments
+        </h2>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-md-3">
+                <form action="#" method="GET">
+                    <div class="input-group input-group-sm mb-3">
+                        <div class="input-group-prepend">
+                          <label class="input-group-text" for="assignment_sort">sort</label>
+                        </div>
+                        <select class="custom-select custom-select-sm" id="assignment_sort" name="assignment_sort">
+                          <option selected>Choose...</option>
+                          <option value="assignment_sort_date">Date</option>
+                          <option value="assignment_sort_subject">subject</option>
+                        </select>
+                      </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-dark table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Student</th>
+                    <th>Submitted Date</th>
+                    <th>Assignment</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for answer in answers %}
+                    <tr>
+                        <th>{{ forloop.counter }}</th>
+                        <td>{{ answer.student.user.username }}</td>
+                        <td>{{ answer.submitted_date }}</td>
+                        <td>
+                            <a href="{{ answer.question.url }}" class="btn btn-sm btn-secondary" style="position: relative; width: 100px;"> 
+                                <span class="material-icons md-18" style="position: absolute;top: 50%;transform: translate(0, -50%);">
+                                    get_app
+                                </span> 
+                                <span class="pl-4">
+                                    Download
+                                </span>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock body %}

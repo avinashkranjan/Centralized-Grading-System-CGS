@@ -1,0 +1,110 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Home
+{% endblock title %}
+
+{% block body %}
+<div class="bg-dark text-light">
+    <div class="container px-3 py-5">
+        <div class="row">
+            <div class="col-xs-12 col-md-6 d-flex flex-column justify-content-center align-items-center mb-3">
+                <h1 class="font-weight-bold">
+                    welcome,
+                </h1>
+                <h3>
+                    Avinash Ranjan
+                </h3>
+            </div>
+            <div class="col-xs-12 col-md-6 d-flex flex-column justify-content-center align-items-center">
+                <div class="lead">
+                    Todays You Have
+                </div>
+                <hr class="bg-light w-100">
+                <div class="row w-100">
+                    <div class="col-4 d-flex justify-content-center font-weight-bold display-4">
+                        <a href="{% url 'class_page' %}" class="text-white">
+                            1
+                        </a>
+                    </div>
+                    <div class="col-4 d-flex justify-content-center font-weight-bold display-4">
+                        <a href="{% url 'exam_page' %}" class="text-white">
+                            3
+                        </a>
+                    </div>
+                    <div class="col-4 d-flex justify-content-center font-weight-bold display-4">
+                        <a href="{% url 'teachers:assignment_page' %}" class="text-white">
+                            2
+                        </a>
+                    </div>
+                </div>
+                <div class="row w-100">
+                    <div class="col-4 d-flex justify-content-center font-weight-bold">
+                        <a href="{% url 'class_page' %}" class="text-light">
+                            <div class="small">
+                                Classes
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-4 d-flex justify-content-center font-weight-bold">
+                        <a href="{% url 'exam_page' %}" class="text-info">
+                            <div class="small">
+                                Exams
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-4 d-flex justify-content-center font-weight-bold">
+                        <a href="{% url 'teachers:assignment_page' %}" class="text-danger">
+                            <div class="small text-center">
+                                Assignment Due
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container py-4">
+    <h3 class="py-4 text-light">
+        Currently Running
+    </h3>
+
+    <div class="card" style="background: #1b262c;">
+        <div class="row">
+            <div class="col-xs-12 col-md-4 d-flex justify-content-center align-items-center">
+                <span
+                    class="material-icons text-light bg-info d-flex justify-content-center align-items-center w-100 h-100"
+                    style="font-size: 8rem;">
+                    school
+                </span>
+            </div>
+            <div class="col-xs-12 col-md-8 p-4">
+                <h2>
+                    Operating System
+                </h2>
+                <br>
+                <div class="lead">
+                    <span class="font-weight-bold">Time</span> : 01 : 30 am - 02 : 00 am
+                </div>
+                <br>
+                <div class="lead">
+                    <span class="font-weight-bold">Time remaining</span> : 20 min
+                </div>
+                <br>
+                <div class="bg-secondary w-100" style="height: 20px; position: relative;">
+                    <div class="text-light bg-danger" style="width: 70%; height: 20px"></div>
+                    <div class="text-light font-weight-bold"
+                        style="position: absolute; top: 0; left: 50%; font-size: 0.8rem;">
+                        70%
+                    </div>
+                </div>
+                <div class="py-3">
+                    <a class="btn btn-info" href="{% url 'class_page' %}">Go To Class</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}

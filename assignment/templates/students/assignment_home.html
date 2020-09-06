@@ -1,0 +1,74 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Assignments
+{% endblock title %}
+
+{% block body %}
+
+<div class="container py-4">
+    <div>
+        <h2>
+            Assignments
+        </h2>
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-md-3">
+                <form action="#" method="GET">
+                    <div class="input-group input-group-sm mb-3">
+                        <div class="input-group-prepend">
+                          <label class="input-group-text" for="assignment_sort">sort</label>
+                        </div>
+                        <select class="custom-select custom-select-sm" id="assignment_sort" name="assignment_sort">
+                          <option selected>Choose...</option>
+                          <option value="assignment_sort_date">Date</option>
+                          <option value="assignment_sort_subject">subject</option>
+                        </select>
+                      </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-dark table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Subject</th>
+                    <th>Due Date</th>
+                    <th>Time Remaining</th>
+                    <th>Assignment</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for assignment in assignments %}
+                    <tr>
+                        <th>{{ forloop.counter }}</th>
+                        <td>{{ assignment.subject }}</td>
+                        <td>{{ assignment.submission_date }}</td>
+                        <td>Today</td>
+                        <td>
+                            <a href="{{ assignment.question.url }}" class="btn btn-sm btn-secondary" style="position: relative; width: 100px;"> 
+                                <span class="material-icons md-18" style="position: absolute;top: 50%;transform: translate(0, -50%);">
+                                    get_app
+                                </span> 
+                                <span class="pl-4">
+                                    Download
+                                </span>
+                            </a>
+                            <a href="{% url 'students:assignment_upload' assignment.pk %}" class="btn btn-sm btn-secondary" style="position: relative; width: 100px;"> 
+                                <span class="material-icons md-18" style="position: absolute;top: 50%;transform: translate(0, -50%);">
+                                    publish
+                                </span> 
+                                <span class="pl-4">
+                                    Upload
+                                </span>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock body %}

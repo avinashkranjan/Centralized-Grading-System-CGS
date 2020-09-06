@@ -1,0 +1,67 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Exam - Submit
+{% endblock title %}
+
+{% block body %}
+    <div class="container py-4">
+        <form method="post" enctype="multipart/form-data" >
+            {% csrf_token %}
+            <label for="{{ exam.question1 }}">Question 1:</label>
+            {{ exam.question1 }}
+            <br>
+            {{ form.question1_answer }}
+            <br>
+
+            <label for="{{ exam.question1 }}">Question 2:</label>
+            {{ exam.question2 }}
+            <br>
+            {{ form.question2_answer }}
+            <br>
+
+            <label for="{{ exam.question1 }}">Question 3:</label>
+            {{ exam.question3 }}
+            <br>
+            {{ form.question3_answer }}
+            <br>
+
+            <input id="submit-answers" type="submit" value="Submit">
+        </form>
+    </div>
+
+{% endblock body %}
+
+
+{% block scripts %}
+    <script>
+        var vis = (function(){
+            var stateKey, eventKey, keys = {
+                hidden: "visibilitychange",
+                webkitHidden: "webkitvisibilitychange",
+                mozHidden: "mozvisibilitychange",
+                msHidden: "msvisibilitychange"
+            };
+            for (stateKey in keys) {
+                if (stateKey in document) {
+                    eventKey = keys[stateKey];
+                    break;
+                }
+            }
+            return function(c) {
+                if (c) document.addEventListener(eventKey, c);
+                return !document[stateKey];
+            }
+        })();
+
+        vis(function(){
+            document.title = vis() ? 'visible' : 'not_visible';
+            visibilityStatus = vis() ? 'visible' : 'not_visible';
+            console.log(visibilityStatus)
+            if(visibilityStatus === "not_visible") {
+                document.getElementById('submit-answers').click()
+            }
+        });
+    </script>
+{% endblock scripts %}
+

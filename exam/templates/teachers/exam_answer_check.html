@@ -1,0 +1,52 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Exam - Check
+{% endblock title %}
+
+{% block body %}
+
+    <div class="container py-4">
+        <form method="post">
+            {% csrf_token %}
+            <label for="{{ exam.question1 }}">Question 1:</label>
+            {{ exam.question1 }}
+            <div class="float-right">{{ exam.question1_total_marks }}</div>
+            <br>
+            <label for="{{ answer.question1_answer }}">Answer:</label>
+            {{ answer.question1_answer }}
+            <br>
+            <label>Marks:</label>
+            {{ form.question1_marks }}
+
+            <br>
+            <br>
+            <label for="{{ exam.question1 }}">Question 2:</label>
+            {{ exam.question2 }}
+            <div class="float-right">{{ exam.question2_total_marks }}</div>
+            <br>
+            <label for="{{ answer.question2_answer }}">Answer:</label>
+            {{ answer.question2_answer }}
+            <br>
+            <label>Marks:</label>
+            {{ form.question2_marks }}
+
+            <br>
+            <br>
+            <label for="{{ exam.question1 }}">Question 3:</label>
+            {{ exam.question3 }}
+            <div class="float-right">{{ exam.question3_total_marks }}</div>
+            <br>
+            <label for="{{ answer.question3_answer }}">Answer:</label>
+            {{ answer.question3_answer }}
+            <br>
+            <label>Marks:</label>
+            {{ form.question3_marks }}
+
+            <br>
+            <input type="submit" value="Verify">
+            <a href="{% url 'exam_page_details_teacher' %}" class="btn btn-outline-secondary" role="button">Nevermind</a>
+            {{exam.full_marks}}
+        </form>
+    </div>
+{% endblock body %}

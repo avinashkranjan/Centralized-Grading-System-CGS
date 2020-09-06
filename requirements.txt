@@ -1,0 +1,14 @@
+asgiref==3.2.10
+click==7.1.2
+cmake==3.18.2.post1
+Django==3.1
+django-crispy-forms==1.9.2
+dlib @ https://files.pythonhosted.org/packages/a4/7b/2f7f29f460629a8143b2deea1911e2fb1d9d88d29bf645ba321461588e88/dlib-19.21.0.tar.gz#sha256=e79d8e14171b8446d6b5434d7dc3b44a23ca05c8f99266acaf731cc7b268edb6
+face-recognition==1.3.0
+face-recognition-models==0.3.0
+imutils==0.5.3
+numpy==1.19.1
+opencv-contrib-python==4.4.0.42
+Pillow==7.2.0
+pytz==2020.1
+sqlparse==0.3.1

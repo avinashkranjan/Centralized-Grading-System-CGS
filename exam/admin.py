@@ -1,7 +1,10 @@
 from django.contrib import admin
-from .models import Student
-from .models import Score
+
+from .models import (
+    ExamQuestions,
+    ExamAnswers,
+)
 
 
-admin.site.register(Student)
-admin.site.register(Score)
+admin.site.register(ExamQuestions),
+admin.site.register(ExamAnswers)

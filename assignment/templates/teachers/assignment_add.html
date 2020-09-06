@@ -1,0 +1,62 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Assignments - Add
+{% endblock title %}
+
+{% block body %}
+
+    <div class="container">
+    <div class="row justify-content-md-center d-flex justify-content-center align-items-center" style="min-height: 60vh;">
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-10">
+        <div class="my-3">
+          <h3>Add Assignment</h3>
+          <hr class="bg-white">
+        </div>
+        <form method="post" enctype="multipart/form-data" >
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="form-control form-control-sm btn btn-sm btn-warning" style="position: relative; width: 50%;">
+                <span class="material-icons md-18" style="position: absolute; top: 50%; transform: translate(0, -50%);">
+                    publish
+                  </span>
+                  <span class="pl-4">
+                    upload
+                  </span>
+            </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <style>
+      input[type="text"], select{
+        display: block;
+        width: 100%;
+        height: calc(1.5em + .75rem + 2px);
+        font-weight: 400;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        height: calc(1.5em + .5rem + 2px);
+        padding: .25rem .5rem;
+        font-size: .875rem;
+        border-radius: .2rem;
+      }
+      label{
+        color: #007bff;
+        font-size: 80%;
+        font-weight: 400;
+        display: block;
+      }
+      #file-upload-button{
+          display: none;
+      }
+  </style>
+
+{% endblock body %}
+

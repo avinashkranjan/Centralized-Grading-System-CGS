@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Exam - Update
+{% endblock title %}
+
+{% block body %}
+
+    <div class="container py-4">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Update">
+            <a href="{% url 'exam_page_details_teacher' %}" class="btn btn-outline-secondary" role="button">Nevermind</a>
+            <a href="{% url 'exam_delete' exam.pk %}" class="btn btn-danger float-right" role="button">Delete</a>
+        </form>
+    </div>
+{% endblock body %}

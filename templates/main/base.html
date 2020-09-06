@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/assets/css/base.css">
+    <link rel="stylesheet" type="text/css"" href=" assets/css/login.css">
+    <link rel="stylesheet" href="assets/css/signup.css">
+
+    <!-- bootstrap stylesheet and material icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'assets/css/material_icons.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    {% comment %}
+    <script type="text/javascript" src="https://unpkg.com/webcam-easy/dist/webcam-easy.min.js"></script>
+    {% endcomment %}
+    {% block links %}
+    {% endblock links %}
+
+    <title>
+        {% block title %}
+        {% endblock title %}
+    </title>
+</head>
+
+<body style="background: #fafafa">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="{% url 'main_page' %}">
+            <span class="material-icons" style="position: absolute;transform: translate(-10%, 20%);">
+                laptop_chromebook
+            </span>
+            <span class="ml-4">
+                CGS-Centralized_Grading_System
+            </span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'main_page' %}">
+                        <span class="material-icons" style="position: absolute;">
+                            home
+                        </span>
+                        <span class="ml-4">
+                            Home
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'class_page' %}">
+                        <span class="material-icons" style="position: absolute;">
+                            school
+                        </span>
+                        <span class="ml-4">
+                            Classes
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'exam_page' %}">
+                        <span class="material-icons" style="position: absolute;">
+                            menu_book
+                        </span>
+                        <span class="ml-4">
+                            Exams
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {% if user.is_teacher %}
+                    <a class="nav-link" href="{% url 'teachers:assignment_page' %}">
+                        {% else %}
+                        <a class="nav-link" href="{% url 'students:assignment_page' %}">
+                            {% endif %}
+                            <span class="material-icons" style="position: absolute;">
+                                assignment
+                            </span>
+                            <span class="ml-4">
+                                Assignments
+                            </span>
+                        </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown">
+                        <span class="material-icons" style="position: absolute;">
+                            account_circle
+                        </span>
+                        <span class="ml-4">
+                            Avinash
+                        </span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'profile_page' %}">
+                            <span class="material-icons" style="position: absolute;">
+                                person
+                            </span>
+                            <span class="ml-4">
+                                My Profile
+                            </span>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{% url 'logout' %}">
+                            <span class="material-icons" style="position: absolute;">
+                                close
+                            </span>
+                            <span class="ml-4">
+                                Sign out
+                            </span>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    {% block body %}
+    {% endblock body %}
+
+    <footer class="bg-dark text-light w-100">
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-xs-12 col-md-4">
+                    <div>
+                        General
+                    </div>
+                    <hr>
+                    <a class="small text-warning" href="{% url 'main_page' %}">Home</a><br>
+                    <a class="small text-warning" href="{% url 'class_page' %}">Classes</a><br>
+                    <a class="small text-warning" href="{% url 'exam_page' %}">Exams</a><br>
+                    <a class="small text-warning" href="{% url 'teachers:assignment_page' %}">Assignment</a>
+                </div>
+                <div class="col-xs-12 col-md-4">
+
+                </div>
+                <div class="col-xs-12 col-md-4">
+                    <div>
+                        Help & Support
+                    </div>
+                    <hr>
+                    <a class="small text-warning" href="">Terms & Condition</a><br>
+                    <a class="small text-warning" href="">Privacy Policy</a><br>
+                    <a class="small text-warning" href="">Help and Support</a><br>
+                    <a class="small text-warning" href="">Contact us</a>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center small pt-2 pb-3">
+            © 2020 CGS-Centralized_Grading_System
+        </div>
+    </footer>
+
+    <!-- bootstrap scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    {% block scripts %}
+    {% endblock scripts %}
+</body>
+
+</html>

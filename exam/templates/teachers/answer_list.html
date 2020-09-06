@@ -1,0 +1,46 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Submitted Answers
+{% endblock title %}
+
+{% block body %}
+
+<div class="container py-4">
+    <div>
+        <h2>
+            Answers
+        </h2>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-dark table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Student</th>
+                    <th>Answers</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for answer in answers %}
+                    <tr>
+                        <th>{{ forloop.counter }}</th>
+                        <td>{{ answer.student.user.username }}</td>
+                        <td>
+                            <a href="{% url 'exam_answer_check' answer.pk %}" class="btn btn-sm btn-secondary" style="position: relative; width: 100px;"> 
+                                <span class="material-icons md-18" style="position: absolute;top: 50%;transform: translate(0, -50%);">
+                                    visibility
+                                </span> 
+                                <span class="pl-4">
+                                    View
+                                </span>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock body %}

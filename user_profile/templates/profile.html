@@ -1,0 +1,168 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Profile
+{% endblock title %}
+
+{% block body %}
+
+<div class="bg-dark text-light">
+    <div class="container px-3 py-5">
+        <div class="row">
+            <div class="col-xs-12 col-md-6 d-flex flex-column justify-content-center align-items-start mb-5">
+                <div class="d-flex justify-content-center align-items-center px-3 mb-3" style="width: 120; height: 120; overflow: hidden;">
+                    <a href="https://miro.medium.com/max/1200/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg">
+                        <img class="img-fluid" style="width: 128px;height: 128px; object-fit: cover;" alt="profile_picture" src="https://miro.medium.com/max/1200/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg"> 
+                    </a>
+                </div>
+                <div class="d-flex justify-content-start align-items-center px-3">
+                    <span class="lead font-weight-bold">
+                        Sijan Joshi
+                    </span>
+                    <div class="badge badge-sm badge-warning ml-2">
+                        Student
+                    </div>
+                </div>
+                <div class="w-100 px-3">
+                    <div class="d-flex align-items-center">
+                        <span class="material-icons small md-18 text-secondary">
+                            school
+                        </span>
+                        <span class="small ml-2">
+                            1st Semister
+                        </span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <span class="material-icons small md-18 text-secondary">
+                            label
+                        </span>
+                        <span class="small ml-2">
+                            017-382
+                        </span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <span class="material-icons small md-18 text-secondary">
+                            menu_book
+                        </span>
+                        <span class="small ml-2">
+                            B.E Computer
+                        </span>
+                    </div>
+                </div>
+                <div class="mx-3 mt-3">
+                    <a href="#" class="btn btn-sm btn-outline-warning" style="position: relative;">
+                        <span class="material-icons md-18" style="position: absolute;top: 50%; transform: translate(0, -50%);">
+                            edit
+                        </span>
+                        <span class="pl-4">
+                            edit profile
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6 d-flex flex-column justify-content-start align-items-center">
+                <div class="lead">
+                    Todays You Have
+                </div>
+                <hr class="bg-light w-100">
+                <div class="row w-100">
+                    <div class="col-4 d-flex justify-content-center font-weight-bold display-4">
+                        <a href="{% url 'class_page' %}" class="text-white">
+                            1
+                        </a>
+                    </div>
+                    <div class="col-4 d-flex justify-content-center font-weight-bold display-4">
+                        <a href="{% url 'exam_page' %}" class="text-white">
+                            3
+                        </a>
+                    </div>
+                    <div class="col-4 d-flex justify-content-center font-weight-bold display-4">
+                        <a href="{% url 'assignment_page' %}" class="text-white">
+                            2
+                        </a>
+                    </div>
+                </div>
+                <div class="row w-100">
+                    <div class="col-4 d-flex justify-content-center font-weight-bold">
+                        <a href="{% url 'class_page' %}" class="text-light">
+                            <div class="small">
+                                Classes
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-4 d-flex justify-content-center font-weight-bold">
+                        <a href="{% url 'exam_page' %}" class="text-info">
+                            <div class="small">
+                                Exams
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-4 d-flex justify-content-center font-weight-bold">
+                        <a href="{% url 'assignment_page' %}" class="text-danger">
+                            <div class="small text-center">
+                                Assignment Due
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container my-3">
+    <h2>
+        Subjects
+    </h2>
+
+    <div class="card mb-3" style="background: #1b262c;">
+        <div class="row">
+            <div class="col-xs-12 col-md-4 d-flex justify-content-center align-items-center">
+                <span class="material-icons text-dark bg-warning d-flex justify-content-center align-items-center w-100 h-100" style="font-size: 8rem;">
+                    school
+                </span>
+            </div>
+            <div class="col-xs-12 col-md-8 p-4">
+                <h2>
+                    Operating System
+                </h2>
+                <div>
+                    <span class="font-weight-bold">Teacher : </span><span>Sir Albert Einstien</span>
+                </div>
+                <br>
+                <div class="bg-secondary w-100" style="height: 20px; position: relative;">
+                    <div class="text-light bg-warning" style="width: 70%; height: 20px"></div>
+                    <div class="text-dark font-weight-bold" style="position: absolute; top: 0; left: 50%; font-size: 0.8rem;">
+                        70%
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card mb-3" style="background: #1b262c;">
+        <div class="row">
+            <div class="col-xs-12 col-md-4 d-flex justify-content-center align-items-center">
+                <span class="material-icons text-dark bg-warning d-flex justify-content-center align-items-center w-100 h-100" style="font-size: 8rem;">
+                    school
+                </span>
+            </div>
+            <div class="col-xs-12 col-md-8 p-4">
+                <h2>
+                    Computer Archetecture
+                </h2>
+                <div>
+                    <span class="font-weight-bold">Teacher : </span><span>Sir Issac Newton</span>
+                </div>
+                <br>
+                <div class="bg-secondary w-100" style="height: 20px; position: relative;">
+                    <div class="text-light bg-warning" style="width: 20%; height: 20px"></div>
+                    <div class="text-dark font-weight-bold" style="position: absolute; top: 0; left: 50%; font-size: 0.8rem;">
+                        20%
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}
