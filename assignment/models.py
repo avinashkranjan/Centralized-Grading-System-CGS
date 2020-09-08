@@ -37,7 +37,7 @@ class Assignment(models.Model):
 class Student(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     roll_no = models.PositiveIntegerField(unique=True, null=False)
-    sem = models.PositiveIntegerField(verbose_name="Semister", default=5)
+    sem = models.PositiveIntegerField(verbose_name="Semester", default=5)
 
     def __str__(self):
         return self.user.username
