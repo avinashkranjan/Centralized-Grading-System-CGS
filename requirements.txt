@@ -4,6 +4,6 @@ Django==3.1.14
 django-crispy-forms==1.9.2
 imutils==0.5.3
 numpy==1.22.0rc1
-Pillow==8.3.2
+Pillow==9.0.0
 pytz==2020.1
 sqlparse==0.3.1
